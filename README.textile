@@ -1,0 +1,75 @@
+h2. Redmine extra query operators plugin
+
+Plugin adds extra operators to issues query, allowing to select exact dates and offsets from current date. Also this plugin adds ability to use regular expressions in text fields
+
+h3. Following extra operators are available for all date fields (start date, due date, etc):
+
+* *Between*
+ Includes all dates which are between specified two dates
+* *After*
+ Includes all dates which are after specified date
+* *Before*
+ Includes all dates which are before specified date
+* *Is months*
+ Includes all dates which are within given month (you may use negative numbers for past months, for example -1 means previous month, etc)
+* *Is weeks*
+ Includes all dates which are within given week (you may use negative numbers for past weeks, for example -1 means previous week, etc)
+
+h3. Following extra operator is available for all string and text fields:
+
+* *Matches regexp*
+ Searches string using SQL regular expression (ie use @\[.*\]@ in subject filter to find all subjects with square brackets)
+
+h3. Extra syntax for operators *before* and *after*
+
+It is possible to define data range relative to current day for *before* and *after* operators. For this use following syntax:
+
+(+|-)<number>[w|m]
+
+* *w* - weeks from current date
+* *m* - months from current date
+
+For example, expression *+0w* in _due date_ filter will show all issues with due date before the monday of next week
+
+h3. Compatibility
+
+Plugin patches *views\queries\_filters.html.erb* view. Additions are marked with _VVK start_ and _VVK end_ comments
+
+h3. Installation and Setup
+
+# Install plugin "Plugin views with revisions":http://www.redmine.org/plugins/redmine_plugin_views_revisions if you do not have it installed
+# Follow the "Redmine plugin installation steps":http://www.redmine.org/wiki/redmine/Plugins
+# Run rake task
+ *rake redmine:plugins:process_version_change RAILS_ENV=production*
+# Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
+
+h3. History
+
+0.1.1
+
+* Rails 3 (Redmine 2.x) compatibility
+
+0.1.0
+
+* Now compatible with 1.3.x again
+* Plugin depends on "Plugin views with revisions":http://www.redmine.org/plugins/redmine_plugin_views_revisions for further Redmine compatibility
+
+0.0.6
+
+* Bugfixes
+
+0.0.5
+
+* Redmine 1.3.x compatibility
+* Not compatible with Redmine versions prior to 1.3.x
+* Extra syntax for *before* and *after* operators implemented (see above)
+
+0.0.4
+
+* Compatibility with Redmine 1.2.x
+* Not compatible with Redmine versions prior to 1.2.x
+
+0.0.3
+
+* First public release
+

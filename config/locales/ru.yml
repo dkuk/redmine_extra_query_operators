@@ -1,0 +1,9 @@
+ru:
+# query selectors strings
+  label_eqo_before_date: "перед определенной датой"
+  label_eqo_after_date: "после определенной датой"
+  label_eqo_between_date: "между определенной датой и текущей"
+  label_eqo_regexp: "matches regexp"
+  label_eqo_mw_tip: "before/after current"
+  label_eqo_month_offset: "номер месяца от текущего"
+  label_eqo_week_offset: "номер недели от текущей"
