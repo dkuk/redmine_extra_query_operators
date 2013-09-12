@@ -1,3 +1,4 @@
+# English strings go here for Rails i18n
 en:
 # query selectors strings
   label_eqo_before_date: "before"
@@ -7,4 +8,4 @@ en:
   label_eqo_mw_tip: "before/after current"
   label_eqo_month_offset: "is months"
   label_eqo_week_offset: "is weeks"
-
+  plugin_test_redmine_extra_query_operators: "redmine_extra_query_operators"
