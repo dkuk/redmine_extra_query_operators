@@ -102,6 +102,6 @@ module ExtraQueryOperators
   end
 end
 
-unless IssueQuery.included_modules.include? ExtraQueryOperators::Patches::QueryModelPatch
-  IssueQuery.send(:include, ExtraQueryOperators::Patches::QueryModelPatch)
+unless Query.included_modules.include? ExtraQueryOperators::Patches::QueryModelPatch
+  Query.send(:include, ExtraQueryOperators::Patches::QueryModelPatch)
 end
